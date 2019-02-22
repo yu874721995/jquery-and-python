@@ -1,0 +1,65 @@
+.indexphoto{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-image: url(../photo/index.jpg);
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #cccccc;
+}
+.header{
+    display: inline-block;
+    height: 60px;
+    width: 100%;
+    margin:20px;
+    padding: 0px;
+    
+}
+.logo{
+    font-size: 30px;
+    display: inline-block;
+    width: 200px;
+    float: left;
+}
+#menu { 
+    font:12px verdana, arial, sans-serif; 
+    width: 600px;
+    padding: 0px;
+    float: right;
+   }
+#menu, #menu li {
+    list-style:none;
+    padding:0;
+    margin:0;
+   }
+#menu li { 
+    float:left; 
+   }
+#menu li a {
+    display:block;
+    /* 如果是中英文混排的文字，建议用固定宽度
+    width:150px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    */
+    padding:8px 50px;
+    background:#3A4953;
+    color:#fff;
+    text-decoration:none;
+    border-right:1px solid #000;
+   }
+#menu li a:hover {
+    background:#146C9C;
+    color:#fff;
+    text-decoration:none;
+    border-right:1px solid #000;
+   }
+#menu li a.last {
+    border-right:0; /* 去掉左侧边框 */
+    display: inline-block;
+   }
+   
