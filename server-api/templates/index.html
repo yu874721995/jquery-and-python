@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    html,body{
+      height:100%;
+      width:100%;
+      overflow:hidden;
+      margin: 2px;
+      padding:2px;
+    }
+    *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab{
+            width: 100%;
+            height: 150px;
+            margin-left: 0px;
+            margin-top: 30px;
+            border: 1px solid cornflowerblue;
+            position: relative;
+            overflow: hidden;
+        }
+        input[type='radio']{
+            display: none;
+        }
+        .tab label{
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .label-1{
+            left: 0;
+            top: 0;
+        }
+        .label-2{
+            left: 100px;
+            top: 0;
+        }
+        input[type='radio']:checked~div[class^='mod']{
+            display: block;
+        }
+        input[type='radio']:checked~label{
+            background: cornflowerblue;
+        }
+        [class^='mod']{
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            display: none;
+        }
+    .req_button{
+        vertical-align:top;
+    }
+    .history{
+      display:inline-block;
+      height: 700px;
+      width: 15%;
+      vertical-align:top;
+      position:relative;
+      border:2px solid cornflowerblue;
+      overflow-y:auto;
+      margin:0;
+      padding:0;
+      word-break:break-all;
+      font-size: 8px;
+    }
+    .go{
+      display: inline-block;
+      height: 100%;
+      width: 70%;
+      vertical-align:top;
+    }
+    .big{
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+    }
+    #response{
+      display: inline-block;
+    vertical-align:top;
+
+    }
+    #request-body,#request-bodys{
+        height: 150px;
+        width: 100%;
+        display: inline-block;
+        color: #D2691E;
+        border:2px solid cornflowerblue;
+        overflow:auto;
+        word-break:break-all;
+    }
+    #response_text{
+      height: 300px;
+      width: 100%;
+      display: inline-block;
+      color: #D2691E;
+      border:2px solid cornflowerblue;
+      overflow:auto;
+      word-break:break-all;
+
+    }
+    .body_big{
+      position: relative;
+      display: inline-block;
+      height: 150px;
+      width: 650px;
+    }
+    .body{
+      vertical-align:top;
+      display:inline-block;
+      height:100%;
+      width: 100px;
+    }
+    .table{
+      broder:2px;
+      display: inline-block;
+      vertical-align:top;
+
+    }
+    .interface_style{
+      height: 50px;
+
+    }
+    #our{
+      position:absolute;
+      bottom:0;
+      right:30px;
+    }
+  </style>
+</head>
+<body>
+<script src="/static/js/zepto.js"></script>
+<script src="/static/js/indexs.js"></script>
+<div>
+<div><p>welcome!,<span id="msg"></span></p></div>
+<div class="big">
+  <div class="history">
+    <div>
+      历史请求
+    </div>
+    <table id="historys">
+    </table>
+    <button id="our">一键执行</button>
+  </div>
+  <div class="go">
+    <div class="interface_style">请求网址:
+      <input id='url' type="text" value="" style="width:350px;height: 30px">
+      <input type="radio" name="name1" checked value="get" style="display: inline-block">get
+      <input type="radio" name="name1" value="post" style="display: inline-block">post
+      <input type="button" value="请求" onclick="reqJson()">
+    </div>
+    <div class="body_big" style="display: inline-block">
+        <div class="tab" style="overflow: auto">
+        <div>
+            <input type="radio" id="r-1" name="tab" checked>
+            <label for="r-1" class="label-1">请求参数</label>
+            <div class="mod-1" id="mod-1">
+                <table class="table" id="table1">
+        <tr>
+          <th>key:<input class='key' type="text" value=""></th>
+          <th>value:<input class='value' type="text" value=""></th>
+          <th><button class="deletes" id="clear" onclick="deleteRow(this)">--</button></th>
+        </tr>
+      </table>
+      <button id="add" onclick="add()">添加参数</button>
+            </div>
+        </div>
+        <div>
+            <input type="radio" id="r-2" name="tab">
+            <label for="r-2" class="label-2">请求头</label>
+            <div class="mod-2" id="mod-2">
+               <table class="table" id="table2">
+        <tr>
+          <th>key:<input class='key' type="text" value=""></th>
+          <th>value:<input class='value' type="text" value=""></th>
+          <th><button class="deletes" id="clear" onclick="deleteRow(this)">--</button></th>
+        </tr>
+      </table>
+      <button id="add" onclick="add()" style="margin-right: 20px">添加参数</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+      <div>文本格式参数</div>
+      <div id="request-body">
+          <textarea id="request-bodys" cols="50" rows="10"></textarea>
+      </div>
+    <div>
+      <div id="response"><span>返回参数：</span></div><div id="response_text"></div>
+  </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

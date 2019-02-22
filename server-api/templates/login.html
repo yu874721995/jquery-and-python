@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>欢迎登录</h1>
+<table>
+  <thead>
+  <th>用户名:<input id="user" type="text" autocomplete="off" placeholder="请输入用户名"></th>
+  <th>密码:<input id="pwd" type="password" autocomplete="off" placeholder="请输入密码"></th>
+  <th><input type="submit" onclick="login()" value="登录"></th>
+  <th><input type="submit" onclick="goRegister()" value="注册"></th>
+  </thead>
+  <tbody>
+  {% for i in data %}
+      <tr>
+        <td>{{ i.user }}</td>
+        <td>{{ i.password }}&nbsp;&nbsp;&nbsp;<input id='ol' type="button" value="删除" onclick="ss('{{ i.user }}','{{ i.pwd }}',{{ i.id }})"></td>
+
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p>{{ list }}</p>
+<script src="/static/js/zepto.js"></script>
+<script src="/static/js/index.js"></script>
+</body>
+</html>
