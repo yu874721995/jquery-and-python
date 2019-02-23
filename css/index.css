@@ -1,7 +1,14 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
 .indexphoto{
     display: inline-block;
     height: 100%;
     width: 100%;
+    text-align:center;
+    position: relative;
 }
 body{
     background-image: url(../photo/index.jpg);
@@ -30,7 +37,7 @@ body{
     padding: 0px;
     float: right;
    }
-#menu, #menu li {
+#menu, #menu li button{
     list-style:none;
     padding:0;
     margin:0;
@@ -38,28 +45,76 @@ body{
 #menu li { 
     float:left; 
    }
-#menu li a {
+#menu li button{
     display:block;
-    /* 如果是中英文混排的文字，建议用固定宽度
-    width:150px;
-    height:30px;
-    line-height:30px;
-    text-align:center;
-    */
     padding:8px 50px;
     background:#3A4953;
     color:#fff;
     text-decoration:none;
     border-right:1px solid #000;
    }
-#menu li a:hover {
+#menu li button:hover {
     background:#146C9C;
     color:#fff;
     text-decoration:none;
     border-right:1px solid #000;
    }
-#menu li a.last {
+#menu li button.last {
     border-right:0; /* 去掉左侧边框 */
     display: inline-block;
    }
-   
+
+.loginWindow{
+    height: 500px;
+    width: 500px;
+    display: block;
+    background-color: white;
+    float: auto;
+}
+#loginstyle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top:-250px;
+    display: block;
+    
+}
+.button-all{
+    height: 10%;
+    width: 100%;
+}
+.button-smail{
+    border: 2px solid blue;
+    display: inline-block;
+    height: 100%;
+    width: 49.2%;
+    float: left;
+}
+.button-smail button{
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+.submit-big{
+    background-color: yellow;
+    height: 85%;
+    padding-top: 30px;
+}
+.submit-login input,.submit-reg input{
+    display: inline;
+    height: 10%;
+    width: 50%;
+    padding: 5%;
+    margin: 20px;
+}
+.submit-reg{
+    display: none;
+}
+.submitToreg{
+    display: inline;
+    background-color: greenyellow;
+    height: 10%;
+    width: 50%;
+    margin: 20px;
+}
